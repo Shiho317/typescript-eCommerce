@@ -1,8 +1,43 @@
+import { useState } from "react";
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import Badge from '@mui/material/Badge';
+import Drawer from '@mui/material/Drawer';
 
-function App() {
+
+export type CartItemType = {
+  id: number;
+  category: string;
+  description: string;
+  image: string;
+  price: number;
+  title: string;
+  amount: number;
+};
+
+
+const App = () => {
+
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [cartItems, setCartItems] = useState([] as CartItemType[]);
+  
   return (
-    <div className="App">
-      Hello
+    <div>
+      <Drawer
+        anchor='right'
+        open={isCartOpen}
+        onClose={() => setIsCartOpen(false)}>
+
+      </Drawer>
+      <div className="header">
+        <div className="header-logo">
+
+        </div>
+        <div className="header-cart">
+          <Badge>
+            <ShoppingCartOutlinedIcon/>
+          </Badge>
+        </div>
+      </div>
     </div>
   );
 }
