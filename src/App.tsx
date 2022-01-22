@@ -1,22 +1,12 @@
 import { useState } from "react";
+import { Wrapper, StyledButton } from "./App.style";
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import Badge from '@mui/material/Badge';
 import Drawer from '@mui/material/Drawer';
+import Grid from '@mui/material/Grid';
 import products from './item.json';
 import Cart from "./Cart/Cart";
-import { Description } from "@mui/icons-material";
-import { isConstructorDeclaration } from "typescript";
-
-
-// export type CartItemType = {
-//   id: number;
-//   category: string;
-//   description: string;
-//   image: string;
-//   price: number;
-//   title: string;
-//   amount: number;
-// };
+import Item from "./Item/Item";
 
 export interface CartItemType {
   id: number;
@@ -33,30 +23,74 @@ const App = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([] as CartItemType[]);
 
-  const getTotalItem = (items: CartItemType[]) => {
+  const getTotalItems = (items: CartItemType[]) => 
     items.reduce((acc: number, items) => acc + items.amount, 0)
-  }
+  
+
+  const handleAddToCart = (clickedItem: CartItemType) => {
+    setCartItems(prev => {
+      const isItemInCart = prev.find(item => item.id === clickedItem.id)
+
+      if(isItemInCart){
+        return prev.map(item => item.id === clickedItem.id ? {
+          ...item,
+          amount: item.amount + 1
+        } : item
+        );
+      };
+      return [...prev, {...clickedItem, amount: 1}];
+    });
+  };
+
+  const handleRemoveFromCart = (id: number) => {
+    setCartItems(prev => (
+      prev.reduce((acc, item) => {
+        if(item.id === id){
+          return [
+            ...acc,
+            {...item, amount: item.amount - 1}
+          ];
+        } else {
+          return [...acc, item];
+        }
+      }, [] as CartItemType[])
+    ))
+  };
 
   
   return (
-    <div>
+    <Wrapper>
       <Drawer
         anchor='right'
         open={isCartOpen}
         onClose={() => setIsCartOpen(false)}>
-          
+          <Cart
+            cartItems={cartItems}
+            addToCart={handleAddToCart}
+            removeFromCart={handleRemoveFromCart}/>
       </Drawer>
       <div className="header">
         <div className="header-logo">
 
         </div>
-        <div className="header-cart">
-          <Badge>
+        <StyledButton onClick={() => setIsCartOpen(true)}>
+          <Badge badgeContent={getTotalItems(cartItems)} color="secondary">
             <ShoppingCartOutlinedIcon/>
           </Badge>
-        </div>
+        </StyledButton>
       </div>
-    </div>
+      <div className="main">
+        <Grid container spacing={3}>
+          {products?.map(item => (
+            <Grid item key={item.id} xs={12} sm={4}>
+              <Item
+              item={item}
+              handleAddToCart={handleAddToCart}/>
+            </Grid>
+          ))}
+        </Grid>
+      </div>
+    </Wrapper>
   );
 }
 
