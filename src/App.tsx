@@ -2,6 +2,8 @@ import { useState } from "react";
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import Badge from '@mui/material/Badge';
 import Drawer from '@mui/material/Drawer';
+import products from './item.json';
+import Cart from "./Cart/Cart";
 
 
 export type CartItemType = {
@@ -14,6 +16,7 @@ export type CartItemType = {
   amount: number;
 };
 
+const getProducts = products;
 
 const App = () => {
 
@@ -26,7 +29,7 @@ const App = () => {
         anchor='right'
         open={isCartOpen}
         onClose={() => setIsCartOpen(false)}>
-
+          
       </Drawer>
       <div className="header">
         <div className="header-logo">

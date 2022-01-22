@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "category": "skincare",
+    "title": "fresh",
+    "image": "url('/public/assets/fresh-Floral-Mask.webp')",
+    "price": 89.00,
+    "description": "Floral Recovery Redness Reducing Overnight Mask"
+  },
+  {
+    "id": 2,
+    "category": "makeup",
+    "title": "HUDA BEAUTY",
+    "image": "url('/public/assets/huda-beauty-lipstick.webp')",
+    "price": 26.50,
+    "description": "Liquid Matte Ultra-Comfort Transfer-proof Lipstick"
+  },
+  {
+    "id": 3,
+    "category": "skincare",
+    "title": "Peace Out",
+    "image": "url('/public/assets/peace-out-dots.webp')",
+    "price": 25.00,
+    "description": "Salicylic Acid Acne Healing Dots"
+  },
+  {
+    "id": 4,
+    "category": "bath&body",
+    "title": "Supergoop!",
+    "image": "url('/public/assets/supergoop-sunscreen.webp')",
+    "price": "45.00",
+    "description": "Unseen Sunscreen SPF 40 PA+++"
+  },
+  {
+    "id": 5,
+    "category": "fragrance",
+    "title": "Valentino",
+    "image": "url('/public/assets/valentino-parfum.webp')",
+    "price": 123.00,
+    "description": "Donna Born In Roma Eau de Parfum"
+  },
+  {
+    "id": 6,
+    "category": "hair",
+    "title": "Olaplex",
+    "image": "url('/public/assets/olaplex-shampoo.webp')",
+    "price": 38.00,
+    "description": "No. 4 Bond Maintenance™ Shampoo"
+  }
+
+]
