@@ -4,24 +4,39 @@ import Badge from '@mui/material/Badge';
 import Drawer from '@mui/material/Drawer';
 import products from './item.json';
 import Cart from "./Cart/Cart";
+import { Description } from "@mui/icons-material";
+import { isConstructorDeclaration } from "typescript";
 
 
-export type CartItemType = {
+// export type CartItemType = {
+//   id: number;
+//   category: string;
+//   description: string;
+//   image: string;
+//   price: number;
+//   title: string;
+//   amount: number;
+// };
+
+export interface CartItemType {
   id: number;
   category: string;
-  description: string;
+  title: string;
   image: string;
   price: number;
-  title: string;
+  description: string;
   amount: number;
 };
-
-const getProducts = products;
 
 const App = () => {
 
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([] as CartItemType[]);
+
+  const getTotalItem = (items: CartItemType[]) => {
+    items.reduce((acc: number, items) => acc + items.amount, 0)
+  }
+
   
   return (
     <div>
