@@ -22,7 +22,7 @@ export const Wrapper = styled.div`
 
   .details{
     margin-top: 2rem;
-    height: 10rem;
+    height: 13rem;
     width: 70%;
   }
 
@@ -36,6 +36,7 @@ export const Wrapper = styled.div`
     border: none;
     padding: 1rem 2rem;
     border-radius: 0.3rem;
+    cursor: pointer;
   }
 
   .add-button:hover{

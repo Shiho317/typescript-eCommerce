@@ -1,9 +1,12 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+  @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Prompt&display=swap');
   position: relative;
   color: black;
   box-sizing: border-box;
+  font-family: 'Abril Fatface', cursive;
+  font-family: 'Prompt', sans-serif;
   
 
   .header{
@@ -15,6 +18,9 @@ export const Wrapper = styled.div`
     background-color: #e6e6fa;
     display: flex;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
   }
 
   .header-logo{
@@ -33,9 +39,10 @@ export const Wrapper = styled.div`
   .cart-icon{
     width: 5rem;
     height: 5rem;
-    display: grid;
+    display: flex;
     align-items: center;
     margin: 0 1rem;
+    cursor: pointer;
   }
 
   .main{

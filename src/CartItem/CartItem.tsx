@@ -1,40 +1,42 @@
 import { Wrapper } from "./CartItem.style";
-import Button from '@mui/material/Button';
 import { CartItemType } from "../App";
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
 type Props = {
   item: CartItemType;
   addToCart: (clickedItem: CartItemType) => void;
   removeFromCart: (id: number) => void;
+  removeFromItemList: (id: number) => void;
 }
 
-const CartItem: React.FC<Props> = ({item, addToCart, removeFromCart}) => {
+const CartItem: React.FC<Props> = ({item, addToCart, removeFromCart, removeFromItemList}) => {
 
   return(
     <Wrapper>
-      <div>
+      <div className="contents-wrap">
         <h3>{item.title}</h3>
         <div className="information">
-          <p>Price: ${item.price}</p>
+          <p>Price: ${(item.price).toFixed(2)}</p>
           <p>Total: ${(item.amount * item.price).toFixed(2)}</p>
         </div>
         <div className="cart-btn">
-          <Button
-          size="small"
-          disableElevation
-          variant='contained'>
-          +
-          </Button>
-          <p>{item.amount}</p>
-          <Button
-          size="small"
-          disableElevation
-          variant='contained'>
+          <button onClick={() => removeFromCart(item.id)}
+          className="remove-btn">
           -
-          </Button>
+          </button>
+          <p>{item.amount}</p>
+          <button onClick={() => addToCart(item)}
+          className="add-btn">
+          +
+          </button>
         </div>
       </div>
-      <img src={item.image} alt={item.title}/>
+      <div className="img-wrap">
+        <img src={item.image} alt={item.title}/>
+      </div>
+      <div className="trash-icon" onClick={() => removeFromItemList(item.id)}>
+        <DeleteOutlineIcon/>
+      </div>
     </Wrapper>
   );
   };

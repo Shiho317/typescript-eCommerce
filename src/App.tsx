@@ -47,7 +47,7 @@ const App = () => {
   const handleRemoveFromCart = (id: number) => {
     setCartItems(prev => (
       prev.reduce((acc, item) => {
-        if(item.id === id){
+        if(item.id === id && item.amount > 0){
           return [
             ...acc,
             {...item, amount: item.amount - 1}
@@ -59,6 +59,11 @@ const App = () => {
     ))
   };
 
+  const removeFromCartList = (id: number) => {
+    setCartItems(prev => (
+      prev.filter(item => item.id !== id)
+    ))
+  };
   
   return (
     <Wrapper>
@@ -69,7 +74,8 @@ const App = () => {
           <Cart
             cartItems={cartItems}
             addToCart={handleAddToCart}
-            removeFromCart={handleRemoveFromCart}/>
+            removeFromCart={handleRemoveFromCart}
+            removeFromItemList={removeFromCartList}/>
       </Drawer>
       <div className="header">
         <div className="header-logo">
