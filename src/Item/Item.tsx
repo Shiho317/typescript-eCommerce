@@ -1,6 +1,8 @@
 import { Wrapper } from "./Item.style";
 import Button from '@mui/material/Button';
 import { CartItemType } from "../App";
+import { createTheme } from '@mui/material/styles';
+import { ThemeProvider } from "styled-components";
 
 type Props = {
   item: CartItemType;
@@ -13,14 +15,14 @@ const Item: React.FC<Props> = ({item, handleAddToCart}) => {
       <div className="image-wrap">
         <img src={item.image} alt={item.title}/>
       </div>
-      <div>
+      <div className="details">
         <h3>{item.title}</h3>
         <p>{item.description}</p>
-        <h3>${item.price}</h3>
+        <h4>${item.price}</h4>
       </div>
-      <Button onClick={() => handleAddToCart(item)}>
-        Add To Cart
-      </Button>
+        <button className="add-button" onClick={() => handleAddToCart(item)}>
+          Add To Cart
+        </button>
     </Wrapper>
   );
 };
