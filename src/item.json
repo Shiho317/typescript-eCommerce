@@ -3,7 +3,7 @@
     "id": 1,
     "category": "skincare",
     "title": "fresh",
-    "image": "url('/public/assets/fresh-Floral-Mask.webp')",
+    "image": "https://www.sephora.com/productimages/sku/s2535417-main-zoom.jpg?imwidth=1224",
     "price": 89.00,
     "description": "Floral Recovery Redness Reducing Overnight Mask",
     "amount": 0
@@ -12,7 +12,7 @@
     "id": 2,
     "category": "makeup",
     "title": "HUDA BEAUTY",
-    "image": "url('/public/assets/huda-beauty-lipstick.webp')",
+    "image": "https://www.sephora.com/productimages/sku/s2548840-main-zoom.jpg?imwidth=1224",
     "price": 26.50,
     "description": "Liquid Matte Ultra-Comfort Transfer-proof Lipstick",
     "amount": 0
@@ -21,7 +21,7 @@
     "id": 3,
     "category": "skincare",
     "title": "Peace Out",
-    "image": "url('/public/assets/peace-out-dots.webp')",
+    "image": "https://www.sephora.com/productimages/sku/s1962141-main-zoom.jpg?imwidth=1224",
     "price": 25.00,
     "description": "Salicylic Acid Acne Healing Dots",
     "amount": 0
@@ -30,7 +30,7 @@
     "id": 4,
     "category": "bath&body",
     "title": "Supergoop!",
-    "image": "url('/public/assets/supergoop-sunscreen.webp')",
+    "image": "https://www.sephora.com/productimages/sku/s2354207-main-zoom.jpg?imwidth=1224",
     "price": 45.00,
     "description": "Unseen Sunscreen SPF 40 PA+++",
     "amount": 0
@@ -39,7 +39,7 @@
     "id": 5,
     "category": "fragrance",
     "title": "Valentino",
-    "image": "url('/public/assets/valentino-parfum.webp')",
+    "image": "https://www.sephora.com/productimages/sku/s2249688-main-zoom.jpg?imwidth=1224",
     "price": 123.00,
     "description": "Donna Born In Roma Eau de Parfum",
     "amount": 0
@@ -48,7 +48,7 @@
     "id": 6,
     "category": "hair",
     "title": "Olaplex",
-    "image": "url('/public/assets/olaplex-shampoo.webp')",
+    "image": "https://www.sephora.com/productimages/sku/s2121549-main-zoom.jpg?imwidth=1224",
     "price": 38.00,
     "description": "No. 4 Bond Maintenance™ Shampoo",
     "amount": 0

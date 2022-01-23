@@ -12,18 +12,29 @@ const CartItem: React.FC<Props> = ({item, addToCart, removeFromCart}) => {
 
   return(
     <Wrapper>
-      <Button
-        size="small"
-        disableElevation
-        variant='contained'>
+      <div>
+        <h3>{item.title}</h3>
+        <div className="information">
+          <p>Price: ${item.price}</p>
+          <p>Total: ${(item.amount * item.price).toFixed(2)}</p>
+        </div>
+        <div className="cart-btn">
+          <Button
+          size="small"
+          disableElevation
+          variant='contained'>
           +
-      </Button>
-      <Button
-        size="small"
-        disableElevation
-        variant='contained'>
+          </Button>
+          <p>{item.amount}</p>
+          <Button
+          size="small"
+          disableElevation
+          variant='contained'>
           -
-      </Button>
+          </Button>
+        </div>
+      </div>
+      <img src={item.image} alt={item.title}/>
     </Wrapper>
   );
   };
